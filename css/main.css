@@ -2,6 +2,11 @@
 
 /*utilities*/
 
+.site-header h1{
+  text-transform: uppercase;
+  font-weight:700;
+  line-height:1.5;
+}
 /*header*/
 header.site-header{
   display: flex;
@@ -10,6 +15,28 @@ header.site-header{
   background-image: url(https://www.seat.mx/content/countries/mx/seat-website/es/servicio/accesorios-originales/seat-pets/_jcr_content/par/twocolumns_330270530_36697074/twocolumnsimage.resizedViewPort.noscale.assetRootS.jpg);
   background-position: center center;
   background-size: cover;
+}
+.home{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight:700;
+  line-height:1.5;
+}
+
+/*about*/
+.about{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight:700;
+  line-height:1.5;
+}
+
+/*services*/
+.services{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight:700;
+  line-height:1.5;
 }
 
 /*register form*/

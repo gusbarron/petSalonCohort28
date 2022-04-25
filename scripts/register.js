@@ -12,7 +12,7 @@ let petSalon = {
   pets:[]
 }
 let c=0;
-function Pet(name,age,gender,breed,service,ownerName,contactPhone){
+function Pet(name,age,gender,breed,service,ownerName,contactPhone,paymentMethod){
   this.name=name;
   this.age=age;
   this.gender=gender;
@@ -20,6 +20,7 @@ function Pet(name,age,gender,breed,service,ownerName,contactPhone){
   this.service=service;
   this.owner=ownerName;
   this.phone=contactPhone;
+  this.payment=paymentMethod;
   this.id=c++;
 }
 
@@ -28,8 +29,9 @@ let inputAge=document.getElementById("txtAge");
 let inputGender=document.getElementById("txtGender");
 let inputBreed=document.getElementById("txtBreed");
 let inputService=document.getElementById("selService");
-let inputOwner = document.getElementById("txtOwner");
+let inputOwner=document.getElementById("txtOwner");
 let inputPhone=document.getElementById("txtTel");
+let inputPayment=document.getElementById("payService");
 
 function isValid(aPet){
   let valid=true;
@@ -49,7 +51,7 @@ function isValid(aPet){
 }
 
 function register(){
-  let thePet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
+  let thePet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value,inputPayment);
   if(isValid(thePet)){
       petSalon.pets.push(thePet);
       displayCards()
@@ -60,6 +62,12 @@ function register(){
 function clearInputs(){
   inputName.value="";
   inputAge.value="";
+  inputGender.value="";
+  inputBreed.value="";
+  inputService.value="";
+  inputOwner.value="";
+  inputPhone.value="";
+  inputPayment.value="";
 }
 
 function deletePet(petId){
@@ -92,8 +100,8 @@ function searchPet(){
   }
 }
 
-let scooby = new Pet("Scooby",50,"Male","Dane","Grooming","Shaggy","555-555-555");
-let scrappy = new Pet("Scrappy",40,"Male","Mixed","Nails trim"," Shaggy","555-555-555");
-let pancho = new Pet("Pancho", 7, "Male", "Golden Retriever", "Shampoo", "Gus", "555-555-5555");
+let scooby = new Pet("Scooby",50,"Male","Dane","Grooming","Shaggy","555-555-555", "Debit");
+let scrappy = new Pet("Scrappy",40,"Male","Mixed","Nails trim"," Shaggy","555-555-555", "Credit");
+let pancho = new Pet("Pancho", 7, "Male", "Golden Retriever", "Shampoo", "Gus", "555-555-5555", "Cash");
 petSalon.pets.push(scooby,scrappy, pancho);
 displayCards();
